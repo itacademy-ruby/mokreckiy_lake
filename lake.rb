@@ -33,10 +33,20 @@ module Swimming
 	def swim; 'swimming' end
 end
 
+module JetFlying
+	def jet_fly; 'jet fly' end
+end
+
+module CopterFly
+	def copter_fly; 'copter fly' end
+end
+
 class Duck
 	def fly; "can\'t fly" end
 	def swim; "can\'t swim" end
 	def quack; "can\'t quack" end
+  def jet_fly; "can\'t jet fly" end
+  def copter_fly; "can\'t copter fly" end
 end
 
 class RealDuck < Duck
@@ -54,13 +64,27 @@ class WoodenDuck < Duck
 	include Swimming
 end
 
+class RoboDuck < Duck
+  include Quaking
+  include JetFlying
+end
+
+class MechaDuck < Duck
+  include Quaking
+  include CopterFly
+end
+
 ducks ||= []
 ducks << RealDuck.new
 ducks << RubberDuck.new
 ducks << WoodenDuck.new
+ducks << RoboDuck.new
+ducks << MechaDuck.new
 
 ducks.each do |duck|
 	puts "#{duck.class} #{duck.swim}"
 	puts "#{duck.class} #{duck.quack}"
 	puts "#{duck.class} #{duck.fly}"
+  puts "#{duck.class} #{duck.jet_fly}"
+  puts "#{duck.class} #{duck.copter_fly}"
 end
