@@ -34,11 +34,17 @@ module Swimming
 end
 
 module JetFlying
-	def jet_fly; 'jet fly' end
+	include Flying
+	def fly
+	  super + ' with jet engine'
+  end
 end
 
 module CopterFly
-	def copter_fly; 'copter fly' end
+	include Flying
+	def fly
+	  super + ' with copter engine'
+	end
 end
 
 class Duck
@@ -72,6 +78,7 @@ end
 class MechaDuck < Duck
   include Quaking
   include CopterFly
+
 end
 
 ducks ||= []
@@ -85,6 +92,4 @@ ducks.each do |duck|
 	puts "#{duck.class} #{duck.swim}"
 	puts "#{duck.class} #{duck.quack}"
 	puts "#{duck.class} #{duck.fly}"
-  puts "#{duck.class} #{duck.jet_fly}"
-  puts "#{duck.class} #{duck.copter_fly}"
 end
