@@ -1,41 +1,41 @@
 #Lake with ducks
 
 module Flying
-	def fly
+  def fly
     'flying'
   end
 end
 
 module Quaking
-	def quack
+  def quack
     'quack'
   end
 end
 
 module Swimming
-	def swim
+  def swim
     'swimming'
   end
 end
 
 module JetFlying
-	include Flying
-	def fly
-	  super + ' with jet engine'
+  include Flying
+  def fly
+    super + ' with jet engine'
   end
 end
 
 module CopterFly
-	include Flying
-	def fly
-	  super + ' with copter engine'
-	end
+  include Flying
+  def fly
+    super + ' with copter engine'
+  end
 end
 
 class Duck
-	def fly; "can\'t fly" end
-	def swim; "can\'t swim" end
-	def quack; "can\'t quack" end
+  def fly; "can\'t fly" end
+  def swim; "can\'t swim" end
+  def quack; "can\'t quack" end
 end
 
 class RealDuck < Duck
@@ -45,12 +45,12 @@ class RealDuck < Duck
 end
 
 class RubberDuck < Duck
-	include Quaking
-	include Swimming
+  include Quaking
+  include Swimming
 end
 
 class WoodenDuck < Duck
-	include Swimming
+  include Swimming
 end
 
 class RoboDuck < Duck
