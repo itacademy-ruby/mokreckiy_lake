@@ -1,36 +1,21 @@
-# class Duck
-#   def fly; 'flying' end
-
-#   def quack; 'quacking' end
-
-#   def swim; 'swimming' end
-# end
-
-# class RubberDuck < Duck
-# 	def fly; nil end
-# end
-
-# class WoodenDuck < Duck
-# 	def fly; nil end
-# 	def quack; nil end
-# end
-
-# class FlyingDuck
-# end
-
-# class QuakingDuck
-# end
+#Lake with ducks
 
 module Flying
-	def fly; 'flying' end
+	def fly
+    'flying'
+  end
 end
 
 module Quaking
-	def quack; 'quack' end
+	def quack
+    'quack'
+  end
 end
 
 module Swimming
-	def swim; 'swimming' end
+	def swim
+    'swimming'
+  end
 end
 
 module JetFlying
@@ -51,8 +36,6 @@ class Duck
 	def fly; "can\'t fly" end
 	def swim; "can\'t swim" end
 	def quack; "can\'t quack" end
-  def jet_fly; "can\'t jet fly" end
-  def copter_fly; "can\'t copter fly" end
 end
 
 class RealDuck < Duck
@@ -89,7 +72,7 @@ ducks << RoboDuck.new
 ducks << MechaDuck.new
 
 ducks.each do |duck|
-	puts "#{duck.class} #{duck.swim}"
-	puts "#{duck.class} #{duck.quack}"
-	puts "#{duck.class} #{duck.fly}"
+  puts "#{duck.class} #{duck.swim}"
+  puts "#{duck.class} #{duck.quack}"
+  puts "#{duck.class} #{duck.fly}"
 end
